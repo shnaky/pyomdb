@@ -1,4 +1,9 @@
+# Direcotries
+__pycache__
+.pytest_cache
+
+# Build files
 *.pyc
-__pycache__/
-.pytest_cache/
+
+# Enviroment variables
 .env
