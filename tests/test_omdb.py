@@ -1,4 +1,4 @@
-from omdb.omdb import OMDB
+from pyomdb.omdb import OMDB
 
 import pytest  # use pytest -s for console prints (for debugging)
 import os

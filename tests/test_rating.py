@@ -1,7 +1,12 @@
-from omdb.media.rating import Rating
+from pyomdb.media.rating import Rating
+import pytest
 
 rating = Rating("metascore", "99/100")
-rating2 = Rating("RottenTomatoes", 23)
+
+
+def test_init():
+    with pytest.raises(AssertionError):
+        Rating("RottenTomatoes", 23)
 
 
 def test_str():
