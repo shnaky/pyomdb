@@ -4,9 +4,14 @@ import pytest
 rating = Rating("metascore", "99/100")
 
 
-def test_init():
-    with pytest.raises(AssertionError):
-        Rating("RottenTomatoes", 23)
+@pytest.mark.parametrize(
+    "source, value", [("RT", 23), (23, "MS"), (3.2, 43), ("RT", "32")]
+)
+# just a placeholder should be removed
+def test_init(source, value):
+    if not (isinstance(source, str) and isinstance(value, str)):
+        with pytest.raises(AssertionError):
+            Rating(source, value)
 
 
 def test_str():

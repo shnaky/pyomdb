@@ -1,7 +1,8 @@
 class Rating(object):
     def __init__(self, source: str, value: str) -> None:
-        assert isinstance(source, str)
-        assert isinstance(value, str)
+        assert isinstance(source, str), f"source type is {type(source)}"
+        assert isinstance(value, str), f"value type is {type(value)}"
+
         self._source = source
         self._value = value
 
