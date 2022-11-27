@@ -1,4 +1,4 @@
-class Rating(object):
+class Rating:
     def __init__(self, source: str, value: str) -> None:
         assert isinstance(source, str), f"source type is {type(source)}"
         assert isinstance(value, str), f"value type is {type(value)}"
@@ -15,7 +15,7 @@ class Rating(object):
         return self._value
 
     def __repr__(self) -> str:
-        return f"""{self.__class__.__name__}("{self._source}", "{self._value}")"""
+        return f"""{self.__class__.__name__}({self._source!r}, {self._value!r})"""
 
     def __str__(self) -> str:
         return f"""

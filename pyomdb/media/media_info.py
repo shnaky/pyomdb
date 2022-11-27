@@ -3,37 +3,10 @@ from rating import Rating
 
 
 class MediaInfo(Media):
-    def __init__(
-        self,
-        title,
-        year,
-        imdbID,
-        media_t,
-        poster,
-        rated,
-        released,
-        runtime,
-        genre,
-        director,
-        writer,
-        actors,
-        plot,
-        lang,
-        ratings,
-    ):
-        super().__init__(title, year, imdbID, media_t, poster)
-        self._rated = rated
-        self._released = released
-        self._runtime = runtime
-        self._genre = genre
-        self._director = director
-        self._writer = writer
-        self._actors = actors
-        self._plot = plot
-        self._lang = lang
-        self._ratings = [Rating]
+    # **kwargs for unknown attributs in class (use with set attr)
+    def __init__(self, title, year, imdbID, media_type, poster, **kwargs):
+        super().__init__(title, year, imdbID, media_type, poster)
 
-    @property
     def rated(self):
         return self._rated
 
