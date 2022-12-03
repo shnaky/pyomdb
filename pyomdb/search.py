@@ -1,8 +1,28 @@
-from omdb import OMDB
+from pyomdb.omdb import OMDB
 
 
 class Search(OMDB):
-    BASE_PARAM = "s"
+    REQUIRED_PARAM = "s"
+    OPTIONAL_PARAM = {
+        "type": ["movie, series, episode"],
+        "y": int,
+        "r": ["json", "xml"],
+        "page": {"min_value": 1, "max_value": 100},
+        "callback": None,
+        "v": None,
+    }
 
     def __init__(self, title, **kwargs):
-        super().__init__()
+        print(kwargs["apikey"])
+        self._title = title
+        self._params = kwargs
+        self._params[self.REQUIRED_PARAM] = self._title
+        print(self._params)
+        self.__dict__.update(kwargs)
+
+    @property
+    def title(self):
+        return self._title
+
+    def __repr__(self):
+        return self.__dict__.copy()

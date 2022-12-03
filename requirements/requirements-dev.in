@@ -1,3 +1,4 @@
+-c requirements.txt
 pip-tools==6.10.0
 pytest==7.2.0
 python-dotenv==0.21.0
