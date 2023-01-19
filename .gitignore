@@ -1,6 +1,7 @@
 # Direcotries
 __pycache__
 .pytest_cache
+.vscode
 
 # Build files
 *.pyc

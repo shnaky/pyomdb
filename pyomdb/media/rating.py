@@ -1,10 +1,10 @@
 class Rating:
-    def __init__(self, source: str, value: str) -> None:
-        assert isinstance(source, str), f"source type is {type(source)}"
-        assert isinstance(value, str), f"value type is {type(value)}"
+    def __init__(self, Source: str, Value: str) -> None:
+        assert isinstance(Source, str), f"source type is {type(Source)}"
+        assert isinstance(Value, str), f"value type is {type(Value)}"
 
-        self._source = source
-        self._value = value
+        self._source = Source
+        self._value = Value
 
     @property
     def source(self) -> str:

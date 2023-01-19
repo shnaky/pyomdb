@@ -1,35 +1,33 @@
-class Media(object):
-    # TODO: add enum for media_t
+class Media():
     def __init__(
-        self, title: str, year: int, imdbID: str, media_t: str, poster: str
+        self, Title: str, Year: str, imdbID: str, Type: str, Poster: str
     ) -> None:
-        assert isinstance(title, str), f"source type is {type(title)}"
-        assert isinstance(year, int), f"source type is {type(year)}"
+        assert isinstance(Title, str), f"source type is {type(Title)}"
+        assert isinstance(Year, str), f"sour ce type is {type(Year)}"
         assert isinstance(imdbID, str), f"source type is {type(imdbID)}"
-        assert isinstance(media_t, str), f"source type is {type(media_t)}"
-        assert isinstance(poster, str), f"source type is {type(poster)}"
-        self._title = title
-        self._year = year
-        self._imdbID = imdbID
-        self._media_t = media_t
-        self._poster = poster
+        assert isinstance(Type, str), f"source type is {type(Type)}"
+        assert isinstance(Poster, str), f"source type is {type(Poster)}"
+        self.Title = Title
+        self.Year = Year
+        self.imdbID = imdbID
+        self.Type = Type
+        self.Poster = Poster
 
-    @property
-    def title(self):
-        return self._title
+    def __repr__(self):
+        return f"""{self.__class__.__name__}(
+            {self.Title
+!r}, 
+            {self.Year!r}, 
+            {self.imdbID!r}, 
+            {self.Type!r}, 
+            {self.Poster!r}
+            )"""
 
-    @property
-    def year(self):
-        return self._year
-
-    @property
-    def imdbID(self):
-        return self._imdbID
-
-    @property
-    def type(self):
-        return self._type
-
-    @property
-    def poster(self):
-        return self._poster
+    def __str__(self):
+        return f"""
+        Title: {self.Title}
+        Year: {self.Year}
+        ImdbID: {self.imdbID}
+        Type: {self.Type}
+        Poster: {self.Poster}
+        """
