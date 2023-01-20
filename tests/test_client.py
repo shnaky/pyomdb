@@ -17,6 +17,9 @@ def test_by_title(client):
     movie.Writer = "orestis"
     pprint.pprint(movie.__dict__)
 
+def test_by_id(client):
+    movie = client.by_id("tt0126029")
+    pprint.pprint(movie.as_json())
 
 @pytest.mark.parametrize(
     "test_input, expected",

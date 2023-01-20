@@ -5,6 +5,10 @@ class Rating:
 
         self._source = Source
         self._value = Value
+    
+    # TODO: returns a dict instead of a json string (use json.dumps() maybe)
+    def as_json(self) -> dict:
+        return self.__dict__
 
     @property
     def source(self) -> str:
